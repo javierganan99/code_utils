@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.8.3)
 project(code_utils)
 
 set(CMAKE_BUILD_TYPE "Release")
-set(CMAKE_CXX_FLAGS "-std=c++11")
+# set(CMAKE_CXX_FLAGS "-std=c++11")
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -Wall -g -fPIC -fopenmp")
 
 find_package(catkin REQUIRED
@@ -21,6 +22,9 @@ catkin_package(
     CATKIN_DEPENDS roscpp std_msgs
 #    DEPENDS system_lib
     )
+
+# ADDED!!
+# link_directories(/usr/lib/x86_64-linux-gnu)
 
 include_directories(
     ${catkin_INCLUDE_DIRS}
